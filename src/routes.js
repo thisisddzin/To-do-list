@@ -29,21 +29,18 @@ routes.post(
 // *******************
 
 routes.post(
-  '/create_users',
+  '/users',
   validate(validator.createUser),
   handle(controller.UserController.create)
 )
-routes.get('/list_users', handle(controller.UserController.list))
+routes.get('/users', handle(controller.UserController.list))
 // In this point of User routes on, are need authentication
 routes.put(
-  '/app/update_users/:id',
+  '/app/users/:id',
   validate(validator.updateUser),
   handle(controller.UserController.update)
 )
-routes.delete(
-  '/app/remove_users/:id',
-  handle(controller.UserController.destroy)
-)
+routes.delete('/app/users/:id', handle(controller.UserController.destroy))
 
 // ********************
 // *** Todos Routes ***
@@ -51,23 +48,17 @@ routes.delete(
 // All routes of Todos are need authentication
 
 routes.post(
-  '/app/create_todos',
+  '/app/todos',
   validate(validator.createTodo),
   handle(controller.TodoController.create)
 )
-routes.get('/app/list_todos', handle(controller.TodoController.list))
+routes.get('/app/todos', handle(controller.TodoController.list))
 routes.put(
-  '/app/update_todos/:id',
+  '/app/todos/:id',
   validate(validator.updateTodo),
   handle(controller.TodoController.update)
 )
-routes.delete(
-  '/app/remove_todos/:id',
-  handle(controller.TodoController.destroy)
-)
-routes.get(
-  '/app/todo_completed/:id',
-  handle(controller.TodoController.complete)
-)
+routes.delete('/app/todos/:id', handle(controller.TodoController.destroy))
+routes.get('/app/todos/:id', handle(controller.TodoController.complete))
 
 module.exports = routes
