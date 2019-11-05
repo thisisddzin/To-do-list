@@ -15,7 +15,7 @@
     "express-validation": "^1.0.2",
     "joi": "^14.3.0",
     "jsonwebtoken": "^8.4.0",
-    "mongoose": "^5.4.0",
+    "mongoose": "^5.7.5",
     "mongoose-paginate": "^5.0.3",
     "require-dir": "^1.2.0",
     "youch": "^2.0.10"
